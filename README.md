@@ -6,7 +6,7 @@ These scripts automate FreeDTS runs given starting and final gammaV values and s
 
 1. Put gen_inputs.sh, gen_outputs.sh, input_template_weria2.dts, topol.q, top.top on your FreeDTS folder.
 2. Make sure that FreeDTS_openMP is compiled.
-3. Run gen_inputs.sh with the following arguments:
+3. Run gen_inputs.sh with the following optional arguments:
     | **Keyword**   | **Description** | **Default Value**  |
     | :----:      |    :----:   |   :----: |
     | -f          | Folder name where to store input.dts files | inputs1 |
@@ -21,7 +21,7 @@ These scripts automate FreeDTS runs given starting and final gammaV values and s
    
     Increase -i (MC equilibration steps) accordingly if -gi is less than 1.0. 
 
-4. Run gen_outputs.sh with the following arguments:
+4. Run gen_outputs.sh with the following optional arguments:
    | **Keyword**   | **Description** | **Default Value**  |
     | :----:      |    :----:   |   :----: |
     | -f          | Folder name where to store output files | outputs1 |
