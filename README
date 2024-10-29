@@ -1,0 +1,21 @@
+1. Open gen_inputs.sh. You can change the number of steps by replacing 
+the value of init_steps and consequent_steps in the file. 
+
+init_steps = 2000000, number of MC steps from gammaV=1 to gammaV_init=0.8 
+(default)
+consequent_steps = 100000, number of MC steps in between gammaV_init to 
+gammaV_fin, incrementing -0.01
+You can also change gammaV_init and gammaV_fin, just make sure to match 
+them later in the gen_outputs.sh 
+
+2. Run ./gen_inputs.sh
+It should create an inputs folder
+
+3. Open gen_outputs.sh.
+Match the input_foldername with the input_foldername used in gen_inputs.sh,
+as well as the gammaV_init and gammaV_fin values.
+Increase number of replicates if need more shapes.
+
+4. Run ./gen_outputs.sh
+It should create an outputs folder containing several different output 
+folder for each gammaV and each replicate.
