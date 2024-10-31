@@ -2,7 +2,7 @@
 
 source ./vars.sh
 
-output_foldername='outputs_test7'
+output_foldername='outputs1'
 numsteps=$(echo "($gammaV_init-$gammaV_fin)/$increment + 1" | bc)
 replicates=1
 threads=32
