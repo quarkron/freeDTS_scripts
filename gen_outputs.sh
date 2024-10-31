@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source ./gen_inputs.sh
+source ./vars.sh
 
 output_foldername='outputs_test7'
 numsteps=$(echo "($gammaV_init-$gammaV_fin)/$increment + 1" | bc)
@@ -66,3 +66,5 @@ for j in $(seq 1 $replicates); do
 done
 
 cd ..
+
+rm vars.sh
