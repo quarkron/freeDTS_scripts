@@ -9,6 +9,7 @@ increment=0.01
 template='input_template_weria2.dts' #set template file, use protein inclusion parameters set by Zane
 activate_inc=1.0 #set the gammaV in which to turn on inclusions
 inc_density=0.02
+kappa=60
 
 while [[ "$#" -gt 0 ]]; do
     case $1 in
@@ -18,6 +19,7 @@ while [[ "$#" -gt 0 ]]; do
 	-t|--template) template="$2"; shift ;;
 	-a|--activate_inc) activate_inc="$2"; shift;;
 	-d|--inc_density) inc_density="$2"; shift;;
+ 	-k|--kappa) kappa="$2"; shift;;
 	*) echo "Unknown parameter, exiting program: $1"; exit 1
 ;;
     esac
@@ -81,7 +83,8 @@ for i in $(seq 1 $num_steps); do
  filename="input_gammaV$filename_append.dts"
  cp $template $filename
  sed -i "s/^VolumeCoupling.*/VolumeCoupling = SecondOrder 0 10000 $gammaV/" $filename
- 
+ sed -i "s/^Kappa.*/Kappa = $kappa 10 0/" $filename
+
  #turn on membrane protein inclusions only near cell division
  difference=$(echo "$gammaV - $activate_inc" | bc)
  abs_difference=$(echo "if ($difference < 0) -1*$difference else $difference" | bc) 
