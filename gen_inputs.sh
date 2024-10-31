@@ -13,8 +13,11 @@ kappa=60
 
 while [[ "$#" -gt 0 ]]; do
     case $1 in
-	-f|--foldername) input_foldername="$2"; shift ;;
-	-i|--init_steps) init_steps="$2"; shift ;;
+	-f|--foldername) input_foldername="$2"; shift;;
+	-i|--init_steps) init_steps="$2"; shift;;
+ 	-c|--consequent_steps) consequent_steps="$2"; shift;;
+ 	-gi|--gammaV_init) gammaV_init="$2"; shift;;
+  	-gf|--gammaV_fin) gammaV_fin="$2"; shift;;
 	-s|--increment) increment="$2"; shift ;;
 	-t|--template) template="$2"; shift ;;
 	-a|--activate_inc) activate_inc="$2"; shift;;
