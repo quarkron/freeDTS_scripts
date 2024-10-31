@@ -1,6 +1,6 @@
 #!/bin/bash
 
-input_foldername='inputs_test7'
+input_foldername='inputs1'
 init_steps=100000
 consequent_steps=100000
 gammaV_init=1.0
@@ -23,6 +23,21 @@ while [[ "$#" -gt 0 ]]; do
     esac
     shift
 done
+
+pass_to_output='vars.sh'
+{
+        echo "input_foldername=$input_foldername"
+        echo "init_steps=$init_steps"
+        echo "consequent_steps=$consequent_steps"
+        echo "gammaV_init=$gammaV_init"
+        echo "gammaV_fin=$gammaV_fin"
+        echo "increment=$increment"
+        echo "template=$template" #set template file, use protein inclusion parameters set by Zane
+        echo "activate_inc=$activate_inc" #set the gammaV in which to turn on inclusions
+        echo "inc_density=$inc_density"
+        echo "kappa=$kappa"
+} > "$pass_to_output"
+
 
 mkdir -p $input_foldername
 cd $input_foldername
