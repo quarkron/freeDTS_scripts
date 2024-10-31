@@ -18,10 +18,11 @@ These scripts automate FreeDTS runs given starting and final gammaV values and s
     | -s   | Decrement between consecutive gammaV | 0.01|
     | -a   | Value of gammaV to initiate inclusions | 1.0 |
     | -d   | Protein inclusion density | 0.02 |
+    | -k   | Bending rigidity | 60 |
    
     Increase -i (MC equilibration steps) accordingly if -gi is less than 1.0. 
 
-4. Run gen_outputs.sh with the following optional arguments:
+5. Run gen_outputs.sh with the following optional arguments:
    | **Keyword**   | **Description** | **Default Value**  |
     | :----:      |    :----:   |   :----: |
     | -f          | Folder name where to store output files | outputs1 |
